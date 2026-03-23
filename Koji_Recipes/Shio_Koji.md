@@ -65,10 +65,51 @@ x=100; I='米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.13; import
 x=100; I='玄米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.13; import clipboard; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
 ~~~
 
-2026-03-08 脱気瓶250×2
+##### 📝 コメント
 
+2026-03-08 脱気瓶250×2
 <img src="images/2026-03-08.jpeg" alt="2本の脱気瓶に9割充填した画像" title="2本の脱気瓶" width="400">
+
 
 ---
 
+### 📅 2026-01-24 塩麹
 
+##### 🥣 recipe（いい感じ👍）
+
+|材料|割合|分量|%|備考|
+|:-:|:-:|:-:|:-:|:-:|
+|**玄米麹**|1|200g|34.8%||
+|**水**|1.5|300.0ml|52.2%||
+|**塩**|0.38|75.0g|13.1%||
+|**合計**|2.88|575.0g|100.0%|塩分:13.1%|
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=200; I='玄米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.1305; import clipboard; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
+~~~
+
+##### 📝 コメント
+
+2026-01-24 15:12 保温開始。
+2026-01-25 18:00
+<img src="images/2026-01-25.jpeg" alt="2本の脱気瓶に9割充填した画像" width="400">
+
+---
+
+### 📅 YYYY-MM-DD
+
+##### 🥣 recipe（いい感じ👍）
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=200; I='玄米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.13; import clipboard; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
+~~~
+
+##### 📝 コメント
+
+---
