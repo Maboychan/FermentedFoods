@@ -32,17 +32,31 @@
 
 |材料|割合|分量|%|備考|
 |:-:|:-:|:-:|:-:|:-:|
-|**米麹**|1|100g|34.8%||
+|**米麹**|1.0|100.0g|34.8%||
 |**水**|1.5|150.0ml|52.2%||
 |**塩**|0.37|37.4g|13.0%||
 |**合計**|2.87|287.4g|100.0%|塩分:13.0%|
-
 ##### PyKeysのREPL用ワンライナー
 実行するとクリップボードにテーブルがコピーされる。
 ~~~python
-x=100; I='米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.13; import clipboard; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
+x=100; I='米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.13; import clipboard; b_r=r[0]; r=[v/b_r for v in r]; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
 ~~~
 
+
+---
+
+### 📅 YYYY-MM-DD
+
+##### 🥣 recipe（いい感じ👍）
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=100; I='米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.13; import clipboard; b_r=r[0]; r=[v/b_r for v in r]; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
+~~~
+
+##### 📝 コメント
 
 ---
 
@@ -99,17 +113,32 @@ x=200; I='玄米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.1305; i
 
 ---
 
-### 📅 YYYY-MM-DD
+### 📅 2025-11-05 10:15 塩麹
 
 ##### 🥣 recipe（いい感じ👍）
+
+
+|材料|割合|分量|%|備考|
+|:-:|:-:|:-:|:-:|:-:|
+|**米麹**|1.0|48.0g|35.8%||
+|**水**|1.5|72.0ml|53.7%||
+|**塩**|0.29|14.1g|10.5%||
+|**合計**|2.79|134.1g|100.0%|塩分:10.5%
 
 ##### PyKeysのREPL用ワンライナー
 実行するとクリップボードにテーブルがコピーされる。
 
 ~~~python
-x=200; I='玄米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.13; import clipboard; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
+x=48; I='米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.105; import clipboard; b_r=r[0]; r=[v/b_r for v in r]; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
 ~~~
 
 ##### 📝 コメント
+
+2025-11-05 10:16 ヨーグルトメーカーで65℃で保温開始。
+
+2025-11-06 13:02 完成👍小瓶120
+<img width="400" alt="画像" src="images/20251106.png">
+
+
 
 ---
