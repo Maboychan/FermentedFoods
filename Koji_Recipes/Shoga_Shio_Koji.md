@@ -2,6 +2,22 @@
 
 
 
+### 📅 YYYY-MM-DD
+
+##### 🥣 recipe（いい感じ👍）
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=150; I='米麹 水 ウスターソース 塩 合計'.split(); r=[1,1.5,2]; s_s=0.06; salt=0.058; import clipboard; b_r=r[0]; r=[v/b_r for v in r]; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
+~~~
+
+##### 📝 コメント
+
+---
+
+
 
 
 
@@ -76,6 +92,41 @@ x=170;I='生姜 白米麹 水 塩 合計'.split();r=[1,2,1.7,0.13]; Σ=sum(r[:3]
 
 
 ---
+
+### 📅 2026-01-12 生姜塩麹
+
+##### 🥣 recipe（いい感じ👍）
+
+|材料|割合|分量|%|備考|
+|:-:|:-:|:-:|:-:|:-:|
+|**生姜**|2.0|170.0g|37.0%||
+|**古古米麹**|1.0|85.0g|18.5%||
+|**水**|1.7|144.5ml|31.5%||
+|**塩**|0.7|59.5g|13.0%||
+|**合計**|5.4|459.0g|100.0%|塩分:13.0%|
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=170; I='生姜 古古米麹 水 塩 合計'.split(); r=[2,1,1.7]; s_s=0.00; salt=0.13; import clipboard; b_r=r[0]; r=[v/b_r for v in r]; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
+~~~
+
+##### 📝 コメント
+
+2026-01-12 15:19 ヨーグルトメーカー1号で55℃で保温開始。
+
+<img width="400" alt="画像" src="images/20260112.png">
+
+
+2026-01-13 21:24 脱気瓶二つ分完成。
+
+<img width="400" alt="画像" src="images/20260113.png">
+
+
+
+---
+
 
 
 
