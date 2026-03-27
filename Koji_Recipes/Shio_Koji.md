@@ -61,6 +61,34 @@ x=100; I='米麹 水 塩 合計'.split(); r=[1,1.5]; s_s=0.00; salt=0.13; import
 ---
 
 
+### 📅 2026-03-27 塩甘酒
+
+##### 🥣 recipe（いい感じ👍）
+
+|材料|割合|分量|%|備考|
+|:-:|:-:|:-:|:-:|:-:|
+|**甘酒**|1.0|174.0g|87.0%||
+|**塩**|0.15|26.0g|13.0%||
+|**合計**|1.15|200.0g|100.0%|塩分:13.0%|
+甘酒のレシピ
+米 600
+水 1000
+玄米麹 150
+水 200
+
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=174; I='甘酒 塩 合計'.split(); r=[1]; s_s=0.00; salt=0.13; import clipboard; b_r=r[0]; r=[v/b_r for v in r]; s_r=sum(r); t_r=max(s_r, (s_r-r[-1]*s_s)/(1-salt)); salt_amt=max(0, t_r-s_r); actual_s=(r[-1]*s_s+salt_amt)/t_r; R=r+[salt_amt, t_r]; N=['']*(len(r)+1)+[f'塩分:{round(actual_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2)}|{round(x*v,1)}{'ml' if n in['水','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for n,v,note in zip(I,R,N)); clipboard.set(res)
+~~~
+
+##### 📝 コメント
+
+---
+
+
 ### 📅 2026-03-08 玄米塩麹
 
 ##### 🥣 recipe（いい感じ👍）
