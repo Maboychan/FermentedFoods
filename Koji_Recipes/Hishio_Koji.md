@@ -11,7 +11,7 @@
 実行するとクリップボードにテーブルがコピーされる。
 
 ~~~python
-x=100; I='醤 米麹 水 塩 合計'.split(); r=[1,1,1]; s_s=[0.16,0,0]; salt=0.13; import clipboard; b_r=r[0]; r_norm=[v/b_r for v in r]; s_r=sum(r_norm); liq_s=sum(v*s for v,s in zip(r_norm, s_s)); t_r=max(s_r, (s_r-liq_s)/(1-salt)); s_amt=max(0, t_r-s_r); act_s=(liq_s+s_amt)/t_r; R=r_norm+[s_amt, t_r]; N=[f'塩分:{round(s*100,1)}%' if s != 0 else '' for s in s_s]+[f'塩分:100%']+[f'全体塩分:{round(act_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2) if i<len(r) else round(v,2)}|{round(x*v,1)}{'ml' if n in['水','醤油','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for i,(n,v,note) in enumerate(zip(I,R,N))); clipboard.set(res)
+x=250; I='醤 白米麹 水 塩 合計'.split(); r=[2.5,2.5,1]; s_s=[0.16,0,0]; salt=0.08; import clipboard; b_r=r[0]; r_norm=[v/b_r for v in r]; s_r=sum(r_norm); liq_s=sum(v*s for v,s in zip(r_norm, s_s)); t_r=max(s_r, (s_r-liq_s)/(1-salt)); s_amt=max(0, t_r-s_r); act_s=(liq_s+s_amt)/t_r; R=r_norm+[s_amt, t_r]; N=[f'塩分:{round(s*100,1)}%' if s != 0 else '' for s in s_s]+[f'塩分:100%']+[f'全体塩分:{round(act_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2) if i<len(r) else round(v,2)}|{round(x*v,1)}{'ml' if n in['水','醤油','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for i,(n,v,note) in enumerate(zip(I,R,N))); clipboard.set(res)
 ~~~
 
 ##### 📝 コメント
@@ -45,7 +45,35 @@ x=100; I='醤 発酵トマト 林檎酢 甘酒 塩 合計'.split(); r=[1,0.5,1,1
 ##### 📝 コメント
 
 ---
+### 📅 2026-04-04 白米醤麹
 
+##### 🥣 recipe（いい感じ👍）
+
+|材料|割合|分量|%|備考|
+|:-:|:-:|:-:|:-:|:-:|
+|**醤**|2.5|250.0g|41.1%|塩分:16.0%|
+|**白米麹**|2.5|250.0g|41.1%||
+|**水**|1.0|100.0ml|16.4%||
+|**塩**|0.03|8.7g|1.4%|塩分:100%|
+|**合計**|2.43|608.7g|100.0%|全体塩分:8.0%|
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=250; I='醤 白米麹 水 塩 合計'.split(); r=[2.5,2.5,1]; s_s=[0.16,0,0]; salt=0.08; import clipboard; b_r=r[0]; r_norm=[v/b_r for v in r]; s_r=sum(r_norm); liq_s=sum(v*s for v,s in zip(r_norm, s_s)); t_r=max(s_r, (s_r-liq_s)/(1-salt)); s_amt=max(0, t_r-s_r); act_s=(liq_s+s_amt)/t_r; R=r_norm+[s_amt, t_r]; N=[f'塩分:{round(s*100,1)}%' if s != 0 else '' for s in s_s]+[f'塩分:100%']+[f'全体塩分:{round(act_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2) if i<len(r) else round(v,2)}|{round(x*v,1)}{'ml' if n in['水','醤油','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for i,(n,v,note) in enumerate(zip(I,R,N))); clipboard.set(res)
+~~~
+
+##### 📝 コメント
+
+2026-04-04 20:01 ガラス瓶500にピッタリ。
+
+<img width="400" alt="画像" src="images/20260404.jpg">
+
+
+
+
+---
 ### 📅 2026-03-27 醤甘酒
 
 ##### 🥣 recipe（いい感じ👍）
@@ -101,7 +129,7 @@ x=250; I='麹 醤 水 塩 合計'.split(); r=[1,1,0.85]; s_s=0.16; salt=0.095; i
 <img width="400" alt="醤麹" src="images/2026-03-19.jpeg">
 
 
-### 📅 2026-03-01 醤麹
+### 📅 2026-03-01 白米醤麹
 
 ##### 🥣 recipe 1（水分少なめ）2026-03-01
 
