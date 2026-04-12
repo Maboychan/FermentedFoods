@@ -16,7 +16,128 @@ x=960; I='大根 米麹 塩 合計'.split(); r=[3,1]; s_s=[0,0]; salt=0.07; impo
 
 ---
 
-### 📅 2026-04-03 つる爺大根塩麹
+### 📅 2026-04-11 大根塩麹（節子さん）
+
+##### 🥣 recipe（いい感じ👍）
+
+|   材料    |  割合  |   分量    |   %    |    備考     |
+| :-----: | :--: | :-----: | :----: | :-------: |
+| **大根**  | 6.0  | 936.0g  | 62.0%  |           |
+| **玄米麹** | 2.0  | 312.0g  | 20.7%  |           |
+|  **水**  | 1.0  | 156.0ml | 10.3%  |           |
+|  **塩**  | 0.11 | 105.7g  |  7.0%  |  塩分:100%  |
+| **合計**  | 1.61 | 1509.7g | 100.0% | 全体塩分:7.0% |
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=936; I='大根 玄米麹 水 塩 合計'.split(); r=[6,2,1]; s_s=[0,0,0]; salt=0.07; import clipboard; b_r=r[0]; r_norm=[v/b_r for v in r]; s_r=sum(r_norm); liq_s=sum(v*s for v,s in zip(r_norm, s_s)); t_r=max(s_r, (s_r-liq_s)/(1-salt)); s_amt=max(0, t_r-s_r); act_s=(liq_s+s_amt)/t_r; R=r_norm+[s_amt, t_r]; N=[f'塩分:{round(s*100,1)}%' if s != 0 else '' for s in s_s]+[f'塩分:100%']+[f'全体塩分:{round(act_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2) if i<len(r) else round(v,2)}|{round(x*v,1)}{'ml' if n in['水','醤油','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for i,(n,v,note) in enumerate(zip(I,R,N))); clipboard.set(res)
+~~~
+
+
+
+##### 📝 コメント
+
+2026-04-11 21:32 材料
+
+<img width="400" alt="画像" src="images/20260411_1.jpg"> 
+
+2026-04-11 21:34 塩きり麹を作る。
+
+<img width="400" alt="画像" src="images/20260411_2.jpg"> 
+
+2026-04-11 21:37 大根おろしと水を混ぜ混ぜ。
+
+<img width="400" alt="画像" src="images/20260411_3.jpg"> 
+
+2026-04-11 21:42 丸いタッパーでスレスレ。
+
+<img width="400" alt="画像" src="images/20260411_4.jpg"> 
+
+2026-04-11 21:45 中瓶に分ける。
+
+<img width="400" alt="画像" src="images/20260411_5.jpg"> 
+
+2026-04-11 21:47 保温開始。
+
+<img width="400" alt="画像" src="images/20260411_6.jpg"> 
+
+2026-04-11 21:48 保温開始。
+
+<img width="400" alt="画像" src="images/20260411_7.jpg"> 
+
+
+
+
+
+---
+
+
+
+
+---
+
+
+### 📅 2026-04-08 大根塩麹（節子さん）
+
+##### 🥣 recipe（いい感じ👍）
+
+|   材料    |  割合  |   分量    |   %    |    備考     |
+| :-----: | :--: | :-----: | :----: | :-------: |
+| **大根**  | 6.0  | 1200.0g | 62.0%  |           |
+| **玄米麹** | 2.0  | 400.0g  | 20.7%  |           |
+|  **水**  | 1.0  | 200.0ml | 10.3%  |           |
+|  **塩**  | 0.11 | 135.5g  |  7.0%  |  塩分:100%  |
+| **合計**  | 1.61 | 1935.5g | 100.0% | 全体塩分:7.0% |
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=1200; I='大根 玄米麹 水 塩 合計'.split(); r=[6,2,1]; s_s=[0,0,0]; salt=0.07; import clipboard; b_r=r[0]; r_norm=[v/b_r for v in r]; s_r=sum(r_norm); liq_s=sum(v*s for v,s in zip(r_norm, s_s)); t_r=max(s_r, (s_r-liq_s)/(1-salt)); s_amt=max(0, t_r-s_r); act_s=(liq_s+s_amt)/t_r; R=r_norm+[s_amt, t_r]; N=[f'塩分:{round(s*100,1)}%' if s != 0 else '' for s in s_s]+[f'塩分:100%']+[f'全体塩分:{round(act_s*100,1)}%']; res="|材料|割合|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,2) if i<len(r) else round(v,2)}|{round(x*v,1)}{'ml' if n in['水','醤油','酒'] else 'g'}|{round(v/t_r*100,1)}%|{note}|" for i,(n,v,note) in enumerate(zip(I,R,N))); clipboard.set(res)
+~~~
+
+##### 📝 コメント
+
+2026-04-08 18:04 材料。
+
+<img width="400" alt="画像" src="images/20260408_1.jpg">
+
+2026-04-08 18:06 塩きり麹を作る
+
+<img width="400" alt="画像" src="images/20260408_2.jpg"> 
+
+2026-04-08 18:07 大きいボウルに変更。
+
+<img width="400" alt="画像" src="images/20260408_3.jpg"> 
+
+2026-04-08 18:14 大根も混ぜ混ぜ。
+
+<img width="400" alt="画像" src="images/20260408_4.jpg"> 
+
+2026-04-08 18:19 塩水を追加。
+
+<img width="400" alt="画像" src="images/20260408_5.jpg"> 
+
+2026-04-08 18:22 いい感じ。
+
+<img width="400" alt="画像" src="images/20260408_6.jpg"> 
+
+2026-04-08 18:23 保温開始。
+
+<img width="400" alt="画像" src="images/20260408_7.jpg"> 
+
+2026-04-11 18:56 225g×8本
+
+<img width="400" alt="画像" src="images/20260411_0.jpg"> 
+
+
+
+---
+
+
+### 📅 2026-04-03 大根塩麹（つるじい）
 
 ##### 🥣 recipe（いい感じ👍）
 
@@ -73,13 +194,19 @@ x=762; I='大根 米麹 水 塩 合計'.split(); r=[9,3,2]; s_s=[0,0,0]; salt=0.
 
 <img width="400" alt="画像" src="images/20260403_7.jpg"> 
 
+2026-04-05 21:28 脱気瓶250×5本
+
+<img width="400" alt="画像" src="images/20260405_1.jpg"> 
+
+
+
 
 
 
 ---
 
 
-### 📅 2026-03-30 つる爺大根塩麹
+### 📅 2026-03-30 大根塩麹（つるじい）
 
 ##### 🥣 recipe（いい感じ👍）
 
