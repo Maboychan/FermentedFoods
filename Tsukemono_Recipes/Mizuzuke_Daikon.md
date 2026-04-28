@@ -10,7 +10,7 @@
 実行するとクリップボードにテーブルがコピーされる。
 
 ~~~python
-x=1367; salt=0.03; sugar=0.02; I='大根 水 漬け汁 塩 砂糖 合計'.split(); r=[1367,600,300]; s_s=[0,0,0.03]; sg_s=[0,0,0.02]; import clipboard; b_r=r[0]; r_norm=[v/b_r for v in r]; s_r=sum(r_norm); l_s=sum(v*s for v,s in zip(r_norm,s_s)); l_sg=sum(v*s for v,s in zip(r_norm,sg_s)); t_r=max(s_r,(s_r-l_s-l_sg)/(1-salt-sugar)); s_a=max(0,t_r*salt-l_s); sg_a=max(0,t_r*sugar-l_sg); act_s=(l_s+s_a)/t_r; act_sg=(l_sg+sg_a)/t_r; R=r_norm+[s_a,sg_a,t_r]; N=[f'塩分:{round(s*100,1)}%' for s in s_s]+['塩分100%','糖分100%',f'全体:{round(act_s*100,1)}% / {round(act_sg*100,1)}%']; res="|材料|比率|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v,3)}|{round(x*v,1)}{'ml' if n in['水','醤油'] else 'g'}|{round(v/t_r*100,1)}%|{note if i<len(N) else ''}|" for i,(n,v,note) in enumerate(zip(I,R,N))); clipboard.set(res)
+x=2607; salt=0.03; sugar=0.02; I='大根 水 漬け汁 塩 砂糖 合計'.split(); r=[2607,1500,100]; s_s=[0,0,0.03]; sg_s=[0,0,0.02]; import clipboard; b_r=r[0]; r_norm=[v/b_r for v in r]; s_r=sum(r_norm); l_s=sum(v*s for v,s in zip(r_norm,s_s)); l_sg=sum(v*s for v,s in zip(r_norm,sg_s)); t_r=max(s_r,(s_r-l_s-l_sg)/(1-salt-sugar)); s_a=max(0,t_r*salt-l_s); sg_a=max(0,t_r*sugar-l_sg); act_s=(l_s+s_a)/t_r; act_sg=(l_sg+sg_a)/t_r; R=r_norm+[s_a,sg_a,t_r]; N=[f'塩分:{round(s*100,1)}%' for s in s_s]+['塩分100%','糖分100%',f'全体:{round(act_s*100,1)}% / {round(act_sg*100,1)}%']; res="|材料|比率|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v,3)}|{round(x*v,1)}{'ml' if n in['水','醤油'] else 'g'}|{round(v/t_r*100,1)}%|{note if i<len(N) else ''}|" for i,(n,v,note) in enumerate(zip(I,R,N))); clipboard.set(res)
 ~~~
 
 ##### 📝 コメント
