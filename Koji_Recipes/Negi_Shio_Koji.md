@@ -14,6 +14,33 @@ x=436; I='ねぎ 黴米乳酸麹 水 塩 合計'.split(); r=[4,2,1]; s_s=0.00; s
 ##### 📝 コメント
 
 ---
+
+
+### 📅 2026-05-19 ねぎ玄米塩麹（つるじい）
+
+##### 🥣 recipe（いい感じ👍）
+
+|   材料    |  比率   |   分量    |   %    |       備考        |
+| :-----: | :---: | :-----: | :----: | :-------------: |
+| **ねぎ**  |  3.0  | 400.0g  | 47.7%  |      塩分:0%      |
+| **玄米麹** |  1.0  | 133.3g  | 15.9%  |      塩分:0%      |
+|  **水**  |  1.5  | 200.0ml | 23.9%  |      塩分:0%      |
+|  **塩**  | 0.786 | 104.8g  | 12.5%  |     塩分100%      |
+| **砂糖**  |   0   |   0g    |  0.0%  |     糖分100%      |
+| **合計**  | 6.286 | 838.1g  | 100.0% | 全体:12.5% / 0.0% |
+
+
+
+##### PyKeysのREPL用ワンライナー
+実行するとクリップボードにテーブルがコピーされる。
+
+~~~python
+x=400; salt=0.125; sugar=0.00; I='ねぎ 玄米麹 水 塩 砂糖 合計'.split(); r=[3,1,1.5]; s_s=[0,0,0]; sg_s=[0,0,0]; import clipboard; b_r=r[0]; r_norm=[v/b_r for v in r]; s_r=sum(r_norm); l_s=sum(v*s for v,s in zip(r_norm,s_s)); l_sg=sum(v*s for v,s in zip(r_norm,sg_s)); t_r=max(s_r,(s_r-l_s-l_sg)/(1-salt-sugar)); s_a=max(0,t_r*salt-l_s); sg_a=max(0,t_r*sugar-l_sg); act_s=(l_s+s_a)/t_r; act_sg=(l_sg+sg_a)/t_r; R=r_norm+[s_a,sg_a,t_r]; N=[f'塩分:{round(s*100,1)}%' for s in s_s]+['塩分100%','糖分100%',f'全体:{round(act_s*100,1)}% / {round(act_sg*100,1)}%']; res="|材料|比率|分量|%|備考|\n|:-:|:-:|:-:|:-:|:-:|\n"+"\n".join(f"|**{n}**|{round(v*b_r,3)}|{round(x*v,1)}{'ml' if n in['水','醤油'] else 'g'}|{round(v/t_r*100,1)}%|{note if i<len(N) else ''}|" for i,(n,v,note) in enumerate(zip(I,R,N))); clipboard.set(res)
+~~~
+
+##### 📝 コメント
+
+---
 ### 📅 2026-04-13 ねぎ玄米塩麹（つるじい）
 
 ##### 🥣 recipe（いい感じ👍）
